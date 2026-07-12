@@ -181,7 +181,7 @@ else:
 
     tabs = st.tabs([
         "Solicitudes pendientes", "Registro de pacientes", "Agendar cita",
-        "Agenda / Cola de prioridad", "Cancelar o reprogramar", "Lista de suspendidos",
+        "Agenda / Cola de prioridad", "Cancelar o reprogramar",
     ])
 
     # ---- Solicitudes pendientes (evaluación de triaje) ----
@@ -369,25 +369,6 @@ else:
                     db.cancelar_cita(c["id"])
                     st.warning("Cita cancelada.")
                     st.rerun()
-                st.markdown('</div>', unsafe_allow_html=True)
-
-    # ---- Lista de suspendidos ----
-    with tabs[5]:
-        st.subheader("Módulo de restricción temprana (Blacklist)")
-        suspendidos = db.listar_suspendidos()
-        if not suspendidos:
-            st.write("No hay DNIs suspendidos actualmente.")
-        else:
-            for s in suspendidos:
-                st.markdown('<div class="card">', unsafe_allow_html=True)
-                col1, col2 = st.columns([3, 1])
-                with col1:
-                    fecha_exp = datetime.fromisoformat(s["fecha_expiracion"]).strftime("%d/%m/%Y")
-                    st.write(f"**DNI {s['dni']}** — Motivo: {s['motivo']} — Vence: {fecha_exp}")
-                with col2:
-                    if st.button("Levantar sanción", key=f"levantar_{s['dni']}"):
-                        db.levantar_sancion(s["dni"])
-                        st.rerun()
                 st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown("---")
