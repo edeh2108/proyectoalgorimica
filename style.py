@@ -7,8 +7,11 @@ html, body, [class*="css"]  {
 }
 
 /* ---- Fondo general ---- */
-.stApp {
-    background: #e7edf1;
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+.main .block-container {
+    background: #dbe3e8 !important;
 }
 
 /* ---- Cabecera personalizada ---- */
@@ -34,11 +37,11 @@ html, body, [class*="css"]  {
 
 /* ---- Tarjetas ---- */
 .card {
-    background: #f6f8f9;
+    background: #eef2f4;
     border-radius: 14px;
     padding: 1.25rem 1.4rem;
     box-shadow: 0 2px 10px rgba(15, 40, 55, 0.06);
-    border: 1px solid #dbe3e8;
+    border: 1px solid #c7d2d8;
     margin-bottom: 1rem;
 }
 
@@ -90,18 +93,25 @@ section[data-testid="stSidebar"] .stRadio > label { color: #e7f0f4 !important; }
     overflow: hidden;
 }
 
-hr { border-color: #e7edf0; }
+hr { border-color: #c7d2d8; }
 
 /* ---- Inputs / widgets (tonalidad intermedia, no blanco puro) ---- */
-.stTextInput input,
-.stNumberInput input,
-.stTextArea textarea,
-.stDateInput input,
-div[data-baseweb="select"] > div,
-div[data-baseweb="base-input"] {
-    background-color: #f6f8f9 !important;
-    border-color: #dbe3e8 !important;
+[data-testid="stTextInput"] input,
+[data-testid="stNumberInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stDateInput"] input,
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+[data-testid="stSelectbox"] div[data-baseweb="select"] div,
+[data-testid="stWidgetLabel"] + div div[data-baseweb="select"] > div {
+    background-color: #eef2f4 !important;
+    border-color: #c7d2d8 !important;
 }
+
+/* Fallback genérico por si cambian los testids en otra versión de Streamlit */
+input, textarea, select {
+    background-color: #eef2f4 !important;
+}
+
 </style>
 """
 
