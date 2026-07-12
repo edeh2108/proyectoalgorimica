@@ -22,9 +22,9 @@ from pymongo import MongoClient, ASCENDING, ReturnDocument
 from datetime import datetime, timedelta
 
 
-# ----------------------------------------------------------------------------
-# Conexión (cacheada: se reutiliza entre reruns y entre usuarios de la app)
-# ----------------------------------------------------------------------------
+
+# Conexión 
+
 @st.cache_resource
 def get_client():
     try:
@@ -73,7 +73,7 @@ def _next_id(nombre_contador: str) -> int:
     return doc["seq"]
 
 
-# ---------------- Pacientes ----------------
+# Pacientes 
 
 def registrar_paciente(dni, nombres, apellidos, edad, tipo_paciente):
     d = get_db()
@@ -99,7 +99,7 @@ def obtener_paciente(dni):
     return _clean(d.pacientes.find_one({"dni": dni}))
 
 
-# ---------------- Citas ----------------
+# Citas 
 
 def existe_conflicto_horario(especialidad, fecha, hora, excluir_id=None):
     d = get_db()
@@ -149,7 +149,7 @@ def horarios_ocupados(especialidad, fecha):
     return [r["hora"] for r in rows]
 
 
-# ---------------- Pre-citas pendientes (panel del cliente) ----------------
+# Pre-citas pendientes (panel del cliente) 
 
 def crear_pendiente(dni, nombres, apellidos, edad, especialidad, fecha_preferida,
                      contacto, sintomas, nivel_prioridad, puntaje):
@@ -176,7 +176,7 @@ def eliminar_pendiente(pendiente_id):
     d.pendientes.delete_one({"id": pendiente_id})
 
 
-# ---------------- Blacklisting / sanciones (sección 2.2.1) ----------------
+# Blacklisting / sanciones (sección 2.2.1)
 
 def sancionar_dni(dni, motivo, meses):
     d = get_db()
