@@ -214,3 +214,5 @@ def listar_suspendidos():
 def levantar_sancion(dni):
     d = get_db()
     d.suspendidos.delete_one({"dni": dni})
+def storage_backend_label():
+       return "💾 Datos almacenados en MongoDB Atlas (persistencia permanente)"
