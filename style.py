@@ -8,13 +8,15 @@ html, body, [class*="css"]  {
 
 /* ---- Fondo general ---- */
 .stApp {
-    background: linear-gradient(180deg, #0b1f2b 0%, #0e2a38 220px, #f4f7f8 220px, #f4f7f8 100%);
+    background: #f4f7f8;
 }
 
 /* ---- Cabecera personalizada ---- */
 .app-header {
+    background: #0e2a38;
     padding: 1.4rem 2rem 1.1rem 2rem;
     margin: -1rem -1rem 1.6rem -1rem;
+    border-radius: 0 0 14px 14px;
 }
 .app-header h1 {
     font-family: 'Sora', sans-serif;
