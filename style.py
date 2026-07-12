@@ -8,12 +8,12 @@ html, body, [class*="css"]  {
 
 /* ---- Fondo general ---- */
 .stApp {
-    background: #f4f7f8;
+    background: #e7edf1;
 }
 
 /* ---- Cabecera personalizada ---- */
 .app-header {
-    background: #0e2a38;
+    background: #2c5a72;
     padding: 1.4rem 2rem 1.1rem 2rem;
     margin: -1rem -1rem 1.6rem -1rem;
     border-radius: 0 0 14px 14px;
@@ -69,15 +69,15 @@ div.stButton > button {
     padding: 0.5rem 1.1rem;
 }
 div.stButton > button[kind="primary"] {
-    background: #12475e;
+    background: #2c5a72;
 }
 div.stButton > button[kind="primary"]:hover {
-    background: #0d3648;
+    background: #234759;
 }
 
 /* ---- Sidebar ---- */
 section[data-testid="stSidebar"] {
-    background: #0e2a38;
+    background: #2c5a72;
 }
 section[data-testid="stSidebar"] * {
     color: #e7f0f4 !important;
