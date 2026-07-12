@@ -34,11 +34,11 @@ html, body, [class*="css"]  {
 
 /* ---- Tarjetas ---- */
 .card {
-    background: #ffffff;
+    background: #f6f8f9;
     border-radius: 14px;
     padding: 1.25rem 1.4rem;
     box-shadow: 0 2px 10px rgba(15, 40, 55, 0.06);
-    border: 1px solid #e7edf0;
+    border: 1px solid #dbe3e8;
     margin-bottom: 1rem;
 }
 
@@ -91,6 +91,17 @@ section[data-testid="stSidebar"] .stRadio > label { color: #e7f0f4 !important; }
 }
 
 hr { border-color: #e7edf0; }
+
+/* ---- Inputs / widgets (tonalidad intermedia, no blanco puro) ---- */
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stDateInput input,
+div[data-baseweb="select"] > div,
+div[data-baseweb="base-input"] {
+    background-color: #f6f8f9 !important;
+    border-color: #dbe3e8 !important;
+}
 </style>
 """
 
