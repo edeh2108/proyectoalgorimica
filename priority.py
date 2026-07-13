@@ -52,9 +52,9 @@ PESO_EDAD_CONDICION = 2  # E: >60 años o gestante
 @dataclass
 class ResultadoTriaje:
     puntaje_total: int
-    nivel: str          # "I", "II", "III", "IV"
-    etiqueta: str        # nombre humano
-    posicion_cola: str   # descripción de cómo se inserta en la cola
+    nivel: str          
+    etiqueta: str        
+    posicion_cola: str   
     tiempo_sugerido: str
 
 
