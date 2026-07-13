@@ -23,7 +23,7 @@ ESPECIALIDADES = [
     "Medicina General", "Pediatría", "Ginecología", "Cardiología",
     "Traumatología", "Dermatología", "Odontología",
 ]
-HORAS_DISPONIBLES = [f"{h:02d}:00" for h in range(8, 18)]
+HORAS_DISPONIBLES = [f"{h:02d}:00" for h in range(6, 18)]
 
 ADMIN_PASSWORD = st.secrets.get("ADMIN_PASSWORD", "admin123") if hasattr(st, "secrets") else "admin123"
 
