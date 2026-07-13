@@ -12,7 +12,7 @@ Donde:
            todas las variables, tal como se describe en el cuestionario
            de triaje del documento).
 
-Niveles de estratificación (tal como el informe los define):
+Niveles de estratificación:
     Prioridad I   (Emergencia Roja)   -> total >= 6   -> posición 0 en la cola
     Prioridad II  (Urgencia Mayor)    -> 4 <= total <= 5 -> inserción prioritaria
     Prioridad III (Urgencia Menor)    -> 1 <= total <= 3 -> turno más cercano del día
