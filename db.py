@@ -192,27 +192,3 @@ def sancionar_dni(dni, motivo, meses):
         upsert=True,
     )
 
-
-def esta_suspendido(dni):
-    """Búsqueda en la lista de suspendidos. Auto-purga sanciones expiradas."""
-    d = get_db()
-    row = d.suspendidos.find_one({"dni": dni})
-    if not row:
-        return None
-    if datetime.fromisoformat(row["fecha_expiracion"]) < datetime.now():
-        d.suspendidos.delete_one({"dni": dni})
-        return None
-    return _clean(row)
-
-
-def listar_suspendidos():
-    d = get_db()
-    rows = _clean_many(list(d.suspendidos.find().sort("fecha_sancion", -1)))
-    return rows
-
-
-def levantar_sancion(dni):
-    d = get_db()
-    d.suspendidos.delete_one({"dni": dni})
-def storage_backend_label():
-       return "💾 Datos almacenados en MongoDB Atlas (persistencia permanente)"
